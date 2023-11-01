@@ -8,7 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'lifecyclehooks';
   message:string="kiran";
+  name="Sunil"
+  dest=true;
   passtochild(inputel:HTMLInputElement){
     this.message=inputel.value;
+  }
+
+  changeName(){
+    this.name="Prashant"
+  }
+
+  Destroy(){
+    this.dest=false;
   }
 }

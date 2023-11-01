@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-childcomp',
@@ -19,13 +19,33 @@ export class ChildcompComponent {
     console.log(this.val);
   }
 
-  ngOnChanges(){
+  ngOnChanges(change:SimpleChange){
     console.log("ngOnChanges Invoked");
     console.log(this.val);
+    console.log(change);
   }
 
   ngDoCheck(){
     console.log("ngDoCheck getting invoked");
   }
 
+  ngAfterContentInit(){
+    console.log("ngAfterContentInit is triggered");
+  }
+
+  ngAfterContentChecked(){
+    console.log("ngAfterContentChecked is invoked")
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit is getting called");
+  }
+
+  ngAfterViewChecked(){
+    console.log("ngAfterViewChecked is getting called");
+  }
+
+  ngOnDestroy(){
+    console.log("ngOnDestroy is getting invoked");
+  }
 }

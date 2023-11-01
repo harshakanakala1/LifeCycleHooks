@@ -1,5 +1,9 @@
 <input type="text" #temp>
 <button (click)="passtochild(temp)"> submit</button>
 
-<app-childcomp [val]="message"></app-childcomp>
+<button (click)="changeName()">Change</button>
+<button (click)="Destroy()">Destroy</button>
+<app-childcomp [val]="message" *ngIf="dest">
+     <h1>I am {{name}} Kiran K</h1> 
+</app-childcomp>
 
